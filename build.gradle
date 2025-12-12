@@ -157,6 +157,10 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // mekanism
+    modImplementation("curse.maven:mekanism-268560:6552911")
+    modImplementation("curse.maven:mekanism-generators-268566:6552914")
 }
 
 // See com.example.examplemod.mixin.DummyMixin for information about mixins
