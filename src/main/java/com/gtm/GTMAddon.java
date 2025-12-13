@@ -3,6 +3,8 @@ package com.gtm;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.gtm.common.data.GTMRecipeTypes;
+import com.gtm.common.data.GTMRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -26,6 +28,7 @@ public class GTMAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-
+        GTMRecipeTypes.init();
+        GTMRecipes.init(provider);
     }
 }

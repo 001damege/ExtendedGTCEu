@@ -2,11 +2,17 @@ package com.gtm.common.data;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.recipe.GTRecipeSerializer;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
+import com.gtm.GTMekanism;
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.crafting.RecipeType;
 
-import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
+import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC;
+import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
 
 public class GTMRecipeTypes {
     public static void init() {}
@@ -139,4 +145,12 @@ public class GTMRecipeTypes {
             .setSlotOverlay(false, false, GuiTextures.SLOT)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT);
 
+    @SuppressWarnings("deprecation")
+    public static GTRecipeType register(String name, String group, RecipeType<?>... proxyRecipes) {
+        var recipeType = new GTRecipeType(GTMekanism.id(name), group, proxyRecipes);
+        GTRegistries.register(BuiltInRegistries.RECIPE_TYPE, recipeType.registryName, recipeType);
+        GTRegistries.register(BuiltInRegistries.RECIPE_SERIALIZER, recipeType.registryName, new GTRecipeSerializer());
+        GTRegistries.RECIPE_TYPES.register(recipeType.registryName, recipeType);
+        return recipeType;
+    }
 }
