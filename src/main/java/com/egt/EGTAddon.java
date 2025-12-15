@@ -1,34 +1,31 @@
-package com.gtm;
+package com.egt;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.gtm.common.data.GTMRecipeTypes;
-import com.gtm.common.data.GTMRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 @GTAddon
-public class GTMAddon implements IGTAddon {
+public class EGTAddon implements IGTAddon {
     @Override
     public GTRegistrate getRegistrate() {
-        return GTMekanism.REGISTRATE;
+        return EGT.REGISTRATE;
     }
 
     @Override
     public void initializeAddon() {
-        GTMekanism.LOGGER.info("GTMekanism Additions addon has loaded!");
+        EGT.LOGGER.info("Extended: GTCEu Additions addon has loaded!");
     }
 
     @Override
     public String addonModId() {
-        return GTMekanism.MODID;
+        return EGT.MODID;
     }
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        GTMRecipeTypes.init();
-        GTMRecipes.init(provider);
+
     }
 }

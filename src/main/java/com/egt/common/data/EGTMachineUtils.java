@@ -1,4 +1,4 @@
-package com.gtm.common.data.machines;
+package com.egt.common.data;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -10,10 +10,9 @@ import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import java.util.Locale;
 import java.util.function.BiFunction;
 
-import static com.gtm.GTMekanism.REGISTRATE;
+import static com.egt.EGT.REGISTRATE;
 
-public class GTMMachineUtils {
-
+public class EGTMachineUtils {
     public static MachineDefinition[] registerTieredMachines(String name, BiFunction<IMachineBlockEntity, Integer, MetaMachine> factory, BiFunction<Integer, MachineBuilder<MachineDefinition>, MachineDefinition> builder, int... tiers) {
         return registerTieredMachines(REGISTRATE, name, factory, builder, tiers);
     }

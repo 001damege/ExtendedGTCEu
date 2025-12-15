@@ -1,4 +1,4 @@
-package com.gtm.common.data.machines;
+package com.egt.common.data;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -9,15 +9,14 @@ import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.ParallelHatchPartMachine;
-import com.gtm.common.data.GTMCreativeTab;
 import net.minecraft.network.chat.Component;
 
-import static com.gtm.GTMekanism.REGISTRATE;
-import static com.gtm.common.data.machines.GTMMachineUtils.registerTieredMachines;
+import static com.egt.EGT.REGISTRATE;
+import static com.egt.common.data.EGTMachineUtils.registerTieredMachines;
 
-public class GTMMachines {
+public class EGTMachines {
     static {
-        REGISTRATE.creativeModeTab(() -> GTMCreativeTab.GTM);
+        REGISTRATE.creativeModeTab(() -> EGTCreativeTab.MAIN);
     }
 
     public static void init() {}
@@ -38,7 +37,7 @@ public class GTMMachines {
                     .modelProperty(GTMachineModelProperties.IS_FORMED, false)
                     .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
                     .model(GTMachineModels.createWorkableTieredHullMachineModel(
-                            GTCEu.id("block/machines/parallel_hatch_mk" + (tier - 4)))
+                                    GTCEu.id("block/machines/parallel_hatch_mk" + (tier - 4)))
                             .andThen((ctx, prov, model) -> {
                                 model.addReplaceableTextures("bottom", "top", "side");
                             }))
