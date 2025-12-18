@@ -1,5 +1,7 @@
 package com.egt;
 
+import com.egt.common.data.EGTRecipeTypes;
+import com.egt.common.data.EGTRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -26,6 +28,7 @@ public class EGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-
+        EGTRecipes.recipeAddition(provider);
+        EGTRecipeTypes.init();
     }
 }

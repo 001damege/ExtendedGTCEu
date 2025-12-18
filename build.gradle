@@ -161,6 +161,20 @@ dependencies {
     // mekanism
     modImplementation("curse.maven:mekanism-268560:6552911")
     modImplementation("curse.maven:mekanism-generators-268566:6552914")
+
+    // AE2
+    modImplementation("curse.maven:applied-energistics-2-223794:7148487")
+    modImplementation("curse.maven:guideme-1173950:7127447")
+
+    // Draconic Evolution
+    modImplementation("curse.maven:codechicken-lib-1-8-242818:5753868")
+    modImplementation("curse.maven:brandons-core-231382:5422013")
+    modImplementation("curse.maven:draconic-evolution-223565:6793843")
+
+    // EnderIO
+    modImplementation("curse.maven:ender-io-64578:7183516")
+
+    modRuntimeOnly("curse.maven:flux-networks-248020:5234697")
 }
 
 // See com.example.examplemod.mixin.DummyMixin for information about mixins
