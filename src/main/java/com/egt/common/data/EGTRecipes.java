@@ -9,7 +9,7 @@ import com.egt.data.recipes.addon.draconicevolution.DraconicReactorRecipes;
 import com.egt.data.recipes.addon.draconicevolution.FusionCraftingRecipes;
 import com.egt.data.recipes.addon.enderio.AlloySmelterRecipes;
 import com.egt.data.recipes.addon.mekanism.*;
-import com.egt.data.recipes.addon.mekanismgenerators.FusionReactorRecipes;
+import com.egt.data.recipes.addon.mekanismgenerators.*;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.common.data.GTRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -33,10 +33,15 @@ public class EGTRecipes {
             ReactionRecipes.init(consumer);
             NucleosynthesizingRecipes.init(consumer);
             OxidizingRecipes.init(consumer);
+            FissileFuelRecipes.init(consumer);
+            MiscRecipes.init(consumer);
         }
 
         if (EGT.Mods.isMekGeneratorsLoaded()) {
             FusionReactorRecipes.init(consumer);
+            GasBurningRecipes.init(consumer);
+            SteamTurbineRecipes.init(consumer);
+            FissionReactorRecipes.init(consumer);
         }
 
         if (EGT.Mods.isDELoaded()) {

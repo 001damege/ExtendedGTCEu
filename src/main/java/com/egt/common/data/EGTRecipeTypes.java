@@ -14,8 +14,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.jetbrains.annotations.NotNull;
 
-import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC;
-import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
+import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
 public class EGTRecipeTypes {
     public static void init() {}
@@ -49,7 +48,7 @@ public class EGTRecipeTypes {
             .setMaxIOSize(9, 1, 4, 0)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-            .setSound(GTSoundEntries.ARC);
+            .setSound(GTSoundEntries.COMPUTATION);
 
     // Mekanism
 
@@ -147,6 +146,25 @@ public class EGTRecipeTypes {
             .setMaxIOSize(1, 0, 2, 0)
             .setEUIO(IO.OUT)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ARC);
+
+    public static final GTRecipeType GAS_BURNING_RECIPES = register("gas_burning", ELECTRIC)
+            .setMaxIOSize(0, 0, 1, 0)
+            .setEUIO(IO.OUT)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.TURBINE);
+
+    public static final GTRecipeType STEAM_TURBINE_RECIPES = register("steam_turbine", MULTIBLOCK)
+            .setMaxIOSize(0, 0, 1, 0)
+            .setEUIO(IO.OUT)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.TURBINE)
+            .setSmallRecipeMap(GAS_TURBINE_FUELS);
+
+    public static final GTRecipeType FISSION_REACTOR_RECIPES = register("fission_reactor", MULTIBLOCK)
+            .setMaxIOSize(1, 0, 2, 2)
+            .setEUIO(IO.NONE)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ARC);
 
     // EnderIO

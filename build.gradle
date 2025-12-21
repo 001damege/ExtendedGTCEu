@@ -175,6 +175,7 @@ dependencies {
     modImplementation("curse.maven:ender-io-64578:7183516")
 
     modRuntimeOnly("curse.maven:flux-networks-248020:5234697")
+    modImplementation("curse.maven:long-power-compat-1338476:6955352")
 }
 
 // See com.example.examplemod.mixin.DummyMixin for information about mixins

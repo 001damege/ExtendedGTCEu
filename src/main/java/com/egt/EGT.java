@@ -6,6 +6,7 @@ import com.egt.common.data.addon.ae2.AEMachines;
 import com.egt.common.data.addon.draconicevolution.DEMultiMachines;
 import com.egt.common.data.addon.mekanism.MekMaterials;
 import com.egt.common.data.addon.mekanism.MekMultiMachines;
+import com.egt.common.data.addon.mekanismgenerators.MekGenMaterials;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -47,6 +48,7 @@ public class EGT {
     public static void init() {
         EGTCreativeTab.init();
         EGTItems.init();
+        EGTBlocks.init();
 
         if (GTCEu.Mods.isAE2Loaded()) {
             AEMachines.init();
@@ -74,6 +76,10 @@ public class EGT {
     public void registerMaterials(MaterialEvent event) {
         if (EGT.Mods.isMekLoaded()) {
             MekMaterials.init();
+        }
+
+        if (EGT.Mods.isMekGeneratorsLoaded()) {
+            MekGenMaterials.init();
         }
     }
 

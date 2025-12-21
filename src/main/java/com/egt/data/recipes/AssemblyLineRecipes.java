@@ -1,7 +1,10 @@
 package com.egt.data.recipes;
 
 import com.egt.common.data.EGTMultiMachines;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMachines;
+import com.gregtechceu.gtceu.common.data.machines.GCYMMachines;
 import com.gregtechceu.gtceu.common.data.machines.GTMultiMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -39,7 +42,7 @@ public class AssemblyLineRecipes {
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_fusion_reactor"))
                 .inputItems(GTMultiMachines.FUSION_REACTOR[UV], 8)
-                .inputItems(CustomTags.UEV_CIRCUITS, 4)
+                .inputItems(CustomTags.UHV_CIRCUITS, 4)
                 .inputItems(GTItems.GRAVI_STAR, 32)
                 .inputItems(GTItems.NAN_CERTIFICATE)
                 .inputItems(GTItems.FIELD_GENERATOR_UV)
@@ -58,6 +61,41 @@ public class AssemblyLineRecipes {
                         .EUt(VA[UHV]))
                 .duration(2000)
                 .EUt(VA[UV])
+                .save(provider);
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_alloy_blast_smelter"))
+                .inputItems(CustomTags.UV_CIRCUITS, 32)
+                .inputItems(GTItems.FIELD_GENERATOR_UV, 8)
+                .inputItems(GTBlocks.COIL_TRITANIUM, 8)
+                .inputItems(wireGtSingle, UraniumRhodiumDinaquadide, 32)
+                .inputItems(GCYMMachines.BLAST_ALLOY_SMELTER, 4)
+                .inputFluids(SolderingAlloy.getFluid(1152))
+                .inputFluids(Tritanium.getFluid(1152))
+                .inputFluids(Naquadria.getFluid(5000))
+                .outputItems(EGTMultiMachines.EXTRA_ALLOY_BLAST_SMELTER)
+                .stationResearch(b -> b
+                        .researchStack(GCYMMachines.BLAST_ALLOY_SMELTER.asStack())
+                        .CWUt(144)
+                        .EUt(VA[UV]))
+                .duration(600)
+                .EUt(VA[UHV] / 2)
+                .save(provider);
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_cracker"))
+                .inputItems(CustomTags.LuV_CIRCUITS, 8)
+                .inputItems(GTBlocks.COIL_HSSG, 32)
+                .inputItems(GTItems.ELECTRIC_PUMP_LuV, 8)
+                .inputItems(HULL[LuV])
+                .inputItems(wireGtDouble, IndiumTinBariumTitaniumCuprate, 16)
+                .inputFluids(SolderingAlloy.getFluid(1152))
+                .inputFluids(Naphtha.getFluid(1152))
+                .outputItems(EGTMultiMachines.EXTRA_CRACKER)
+                .stationResearch(b -> b
+                        .researchStack(GTMultiMachines.CRACKER.asStack())
+                        .CWUt(20)
+                        .EUt(VA[ZPM]))
+                .duration(600)
+                .EUt(VA[ZPM] / 2)
                 .save(provider);
     }
 }

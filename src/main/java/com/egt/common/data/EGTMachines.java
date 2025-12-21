@@ -3,6 +3,7 @@ package com.egt.common.data;
 import com.egt.EGT;
 import com.egt.common.data.addon.ae2.AEMultiMachines;
 import com.egt.common.data.addon.enderio.EIOMachines;
+import com.egt.common.data.addon.mekanismgenerators.MekGenMachines;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -31,6 +32,10 @@ public class EGTMachines {
 
         if (GTCEu.Mods.isAE2Loaded()) {
             AEMultiMachines.init();
+        }
+
+        if (EGT.Mods.isMekGeneratorsLoaded()) {
+            MekGenMachines.init();
         }
     }
 

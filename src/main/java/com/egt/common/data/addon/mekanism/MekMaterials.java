@@ -19,4 +19,29 @@ public class MekMaterials {
             .fluid()
             .color(0x6CEDD8)
             .buildAndRegister();
+
+    public static final Material FissileFuel = new Material.Builder(EGT.id("fissile_fuel"))
+            .fluid()
+            .color(0x2E332F)
+            .buildAndRegister();
+
+    public static final Material NuclearWaste = new Material.Builder(EGT.id("nuclear_waste"))
+            .fluid()
+            .color(0x4F412A)
+            .buildAndRegister();
+
+    public static final Material SpentNuclearWaster = new Material.Builder(EGT.id("spent_nuclear_waste"))
+            .fluid()
+            .color(0x262015)
+            .buildAndRegister();
+
+    public static final Material SuperHeatedSodium = new Material.Builder(EGT.id("superheated_sodium"))
+            .fluid()
+            .color(0xFFD19469)
+            .buildAndRegister();
+
+    public static final Material Sodium = new Material.Builder(EGT.id("sodium"))
+            .fluid()
+            .color(0xFFE9FEF4)
+            .buildAndRegister();
 }
