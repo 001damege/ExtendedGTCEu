@@ -127,11 +127,6 @@ legacyForge {
         }
     }
 }
-jar {
-    manifest.attributes([
-            "MixinConfigs": "examplemod.mixins.json"
-    ])
-}
 
 apply from: "$rootDir/gradle/scripts/spotless.gradle"
 
@@ -176,12 +171,6 @@ dependencies {
 
     modRuntimeOnly("curse.maven:flux-networks-248020:5234697")
     modImplementation("curse.maven:long-power-compat-1338476:6955352")
-}
-
-// See com.example.examplemod.mixin.DummyMixin for information about mixins
-mixin {
-    add sourceSets.main, "mixins.${mod_id}.refmap.json"
-    config "${mod_id}.mixins.json"
 }
 
 tasks.named('processResources', ProcessResources).configure {

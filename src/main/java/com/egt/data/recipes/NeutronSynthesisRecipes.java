@@ -1,6 +1,7 @@
 package com.egt.data.recipes;
 
 import com.gregtechceu.gtceu.common.data.GTItems;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -12,6 +13,7 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class NeutronSynthesisRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         NEUTRON_SYNTHESIS_RECIPES.recipeBuilder(id("nan_certificate"))
                 .inputItems(block, Neutronium, 64)

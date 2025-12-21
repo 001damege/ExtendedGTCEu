@@ -1,6 +1,7 @@
 package com.egt.data.recipes.addon.mekanism;
 
 import com.egt.common.data.addon.mekanism.MekMaterials;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.level.block.Blocks;
 
@@ -10,6 +11,7 @@ import static com.egt.EGT.id;
 import static com.egt.common.data.EGTRecipeTypes.NUCLEOSYNTHESIZING_RECIPES;
 
 public class NucleosynthesizingRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         NUCLEOSYNTHESIZING_RECIPES.recipeBuilder(id("wither_skeleton_skull"))
                 .inputItems(Blocks.SKELETON_SKULL)

@@ -1,12 +1,15 @@
 package com.egt.common.data;
 
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
-import com.tterrag.registrate.util.entry.ItemEntry;
+
 import net.minecraft.world.item.Item;
+
+import com.tterrag.registrate.util.entry.ItemEntry;
 
 import static com.egt.EGT.REGISTRATE;
 
 public class EGTItems {
+
     static {
         REGISTRATE.creativeModeTab(() -> EGTCreativeTab.MAIN);
     }
@@ -42,6 +45,4 @@ public class EGTItems {
             .lang("MAX Circuit")
             .tag(CustomTags.MAX_CIRCUITS)
             .register();
-
-
 }

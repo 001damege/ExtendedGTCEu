@@ -2,6 +2,7 @@ package com.egt.common.data.addon.mekanismgenerators;
 
 import com.egt.common.data.EGTCreativeTab;
 import com.egt.common.data.EGTRecipeTypes;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
@@ -10,8 +11,8 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
+
 import mekanism.generators.common.registries.GeneratorsBlocks;
 
 import static com.egt.EGT.REGISTRATE;
@@ -20,6 +21,7 @@ import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTMachines.*;
 
 public class MekGenMultiMachines {
+
     static {
         REGISTRATE.creativeModeTab(() -> EGTCreativeTab.MAIN);
     }
@@ -44,7 +46,8 @@ public class MekGenMultiMachines {
                     .where('A', blocks(GTBlocks.CASING_HSSE_STURDY.get()))
                     .where('O', abilities(PartAbility.OUTPUT_ENERGY))
                     .where('I', blocks(GTBlocks.CASING_HSSE_STURDY.get())
-                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X, PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X)))
+                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X,
+                                    PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X)))
                     .where('F', blocks(GTBlocks.FUSION_GLASS.get()))
                     .where('P', blocks(GTBlocks.CASING_HSSE_STURDY.get())
                             .or(abilities(PartAbility.PARALLEL_HATCH)))
@@ -60,19 +63,38 @@ public class MekGenMultiMachines {
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.BATCH_MODE)
             .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_TURBINE)
             .pattern(def -> FactoryBlockPattern.start()
-                    .aisle("AAAAAAAAA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "AFFFFFFFA", "AFFFFFFFA", "AAAAOAAAA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMRMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF", "AHHHHHHHA")
-                    .aisle("AAAAAAAAA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "AFFFFFFFA", "AFFFFFFFA", "AAIICIIAA")
+                    .aisle("AAAAAAAAA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA",
+                            "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "AFFFFFFFA", "AFFFFFFFA",
+                            "AAAAOAAAA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMRMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "B-------B",
+                            "B-------B", "B-------B", "B-------B", "B-------B", "B-------B", "FMMMMMMMF", "FMMMMMMMF",
+                            "AHHHHHHHA")
+                    .aisle("AAAAAAAAA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA",
+                            "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "ABBBBBBBA", "AFFFFFFFA", "AFFFFFFFA",
+                            "AAIICIIAA")
                     .where('C', controller(blocks(def.get())))
                     .where('I', blocks(GTBlocks.CASING_TUNGSTENSTEEL_TURBINE.get())
                             .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
-                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X, PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X)))
+                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X,
+                                    PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X)))
                     .where('A', blocks(GTBlocks.CASING_TUNGSTENSTEEL_TURBINE.get()))
                     .where('B', blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
                     .where('H', blocks(GCYMBlocks.HEAT_VENT.get()))
@@ -94,19 +116,45 @@ public class MekGenMultiMachines {
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.BATCH_MODE)
             .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
             .pattern(def -> FactoryBlockPattern.start()
-                    .aisle("AAAAAAAAAAAAA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "AAAAAAAAAAAAA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
-                    .aisle("AAAAAAAAAAAAA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "CIIIIPAAAAAAA")
+                    .aisle("AAAAAAAAAAAAA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA",
+                            "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA",
+                            "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "AAAAAAAAAAAAA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B", "B-F-F-F-F-F-B",
+                            "B-F-F-F-F-F-B", "B-R-R-R-R-R-B", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB", "BF-F-F-F-F-FB",
+                            "BF-F-F-F-F-FB", "BR-R-R-R-R-RB", "ABBBBBBBBBBBA")
+                    .aisle("AAAAAAAAAAAAA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA",
+                            "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "ABBBBBBBBBBBA",
+                            "ABBBBBBBBBBBA", "ABBBBBBBBBBBA", "CIIIIPAAAAAAA")
                     .where('C', controller(blocks(def.get())))
                     .where('A', blocks(GTBlocks.CASING_STEEL_SOLID.get()))
                     .where('B', blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
@@ -115,8 +163,10 @@ public class MekGenMultiMachines {
                     .where('P', blocks(GTBlocks.CASING_STEEL_SOLID.get())
                             .or(abilities(PartAbility.PARALLEL_HATCH)))
                     .where('I', blocks(GTBlocks.CASING_STEEL_SOLID.get())
-                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X, PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X))
-                            .or(abilities(PartAbility.EXPORT_FLUIDS, PartAbility.EXPORT_FLUIDS_1X, PartAbility.EXPORT_FLUIDS_4X, PartAbility.EXPORT_FLUIDS_9X)))
+                            .or(abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_1X,
+                                    PartAbility.IMPORT_FLUIDS_4X, PartAbility.IMPORT_FLUIDS_9X))
+                            .or(abilities(PartAbility.EXPORT_FLUIDS, PartAbility.EXPORT_FLUIDS_1X,
+                                    PartAbility.EXPORT_FLUIDS_4X, PartAbility.EXPORT_FLUIDS_9X)))
                     .where('-', air())
                     .build())
             .register();

@@ -7,6 +7,7 @@ import com.egt.common.data.addon.draconicevolution.DEMultiMachines;
 import com.egt.common.data.addon.mekanism.MekMaterials;
 import com.egt.common.data.addon.mekanism.MekMultiMachines;
 import com.egt.common.data.addon.mekanismgenerators.MekGenMaterials;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -15,18 +16,21 @@ import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistr
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("removal")
 @Mod(EGT.MODID)
 public class EGT {
+
     public static final String MODID = "egt";
     public static final String MOD_NAME = "Extended: GTCEu";
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
@@ -99,6 +103,7 @@ public class EGT {
     }
 
     public static class Mods {
+
         public static boolean isDELoaded() {
             return isModLoaded(EGTValues.MODID_DE);
         }

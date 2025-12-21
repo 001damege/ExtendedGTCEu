@@ -1,9 +1,11 @@
 package com.egt.data.recipes.addon.mekanism;
 
 import com.egt.common.data.addon.mekanism.MekMaterials;
-import mekanism.common.tags.MekanismTags;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraftforge.common.Tags;
+
+import mekanism.common.tags.MekanismTags;
 
 import java.util.function.Consumer;
 
@@ -11,6 +13,7 @@ import static com.egt.EGT.id;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.EXTRACTOR_RECIPES;
 
 public class ExtractorRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         EXTRACTOR_RECIPES.recipeBuilder(id("extract_diamond"))
                 .inputItems(Tags.Items.GEMS_DIAMOND)

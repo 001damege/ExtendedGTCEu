@@ -10,13 +10,16 @@ import com.egt.data.recipes.addon.draconicevolution.FusionCraftingRecipes;
 import com.egt.data.recipes.addon.enderio.AlloySmelterRecipes;
 import com.egt.data.recipes.addon.mekanism.*;
 import com.egt.data.recipes.addon.mekanismgenerators.*;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.common.data.GTRecipes;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 public class EGTRecipes {
+
     public static void recipeAddition(Consumer<FinishedRecipe> provider) {
         Consumer<FinishedRecipe> consumer = recipe -> {
             if (!GTRecipes.RECIPE_FILTERS.contains(recipe.getId())) {

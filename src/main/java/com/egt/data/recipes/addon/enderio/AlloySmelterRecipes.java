@@ -1,19 +1,20 @@
 package com.egt.data.recipes.addon.enderio;
 
-import com.enderio.base.common.init.EIOItems;
-import com.enderio.base.common.tag.EIOTags;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
+
+import com.enderio.base.common.init.EIOItems;
+import com.enderio.base.common.tag.EIOTags;
 
 import java.util.function.Consumer;
 
 import static com.egt.EGT.id;
 import static com.egt.common.data.EGTRecipeTypes.ALLOY_SMELTER_RECIPES;
 
-
 public class AlloySmelterRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         ALLOY_SMELTER_RECIPES.recipeBuilder(id("copper_alloy_ingot"))
                 .inputItems(Tags.Items.INGOTS_COPPER)

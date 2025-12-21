@@ -1,11 +1,12 @@
 package com.egt.data.recipes.addon.draconicevolution;
 
-import com.brandon3055.draconicevolution.init.DEContent;
-import com.brandon3055.draconicevolution.init.DETags;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+
+import com.brandon3055.draconicevolution.init.DEContent;
+import com.brandon3055.draconicevolution.init.DETags;
 
 import java.util.function.Consumer;
 
@@ -13,6 +14,7 @@ import static com.egt.EGT.id;
 import static com.egt.common.data.EGTRecipeTypes.FUSION_CRAFTING_RECIPES;
 
 public class FusionCraftingRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         FUSION_CRAFTING_RECIPES.recipeBuilder(id("awakened_core"))
                 .inputItems(Tags.Items.NETHER_STARS)

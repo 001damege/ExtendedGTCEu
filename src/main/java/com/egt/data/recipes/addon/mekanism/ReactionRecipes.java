@@ -2,11 +2,13 @@ package com.egt.data.recipes.addon.mekanism;
 
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
-import mekanism.common.registries.MekanismItems;
-import mekanism.common.tags.MekanismTags;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
+
+import mekanism.common.registries.MekanismItems;
+import mekanism.common.tags.MekanismTags;
 
 import java.util.function.Consumer;
 
@@ -14,6 +16,7 @@ import static com.egt.EGT.id;
 import static com.egt.common.data.EGTRecipeTypes.REACTION_RECIPES;
 
 public class ReactionRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         REACTION_RECIPES.recipeBuilder(id("coal_gasification/blocks_coals"))
                 .inputItems(Tags.Blocks.STORAGE_BLOCKS_COAL)
@@ -91,7 +94,7 @@ public class ReactionRecipes {
                 .EUt(32)
                 .save(provider);
 
-            REACTION_RECIPES.recipeBuilder(id("wood_gasification/rods_wooden"))
+        REACTION_RECIPES.recipeBuilder(id("wood_gasification/rods_wooden"))
                 .inputItems(Tags.Items.RODS_WOODEN, 3)
                 .inputFluids(GTMaterials.Water.getFluid(10))
                 .inputFluids(GTMaterials.Oxygen.getFluid(10))

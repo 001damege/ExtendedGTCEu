@@ -1,11 +1,14 @@
 package com.egt.data.recipes.addon.mekanismgenerators;
 
 import com.egt.common.data.addon.mekanismgenerators.MekGenMultiMachines;
+
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+
 import mekanism.common.registries.MekanismItems;
 import mekanism.generators.common.registries.GeneratorsBlocks;
-import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
@@ -18,6 +21,7 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLY_LINE_RECIPES;
 
 public class MiscRecipes {
+
     public static void init(Consumer<FinishedRecipe> provider) {
         ASSEMBLY_LINE_RECIPES.recipeBuilder(id("fission_reactor"))
                 .inputItems(MekanismItems.POLONIUM_PELLET, 64)

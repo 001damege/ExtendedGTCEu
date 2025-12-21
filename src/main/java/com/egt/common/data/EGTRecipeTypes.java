@@ -1,6 +1,7 @@
 package com.egt.common.data;
 
 import com.egt.EGT;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
@@ -9,14 +10,18 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
+
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.RecipeType;
+
 import org.jetbrains.annotations.NotNull;
 
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
 public class EGTRecipeTypes {
+
     public static void init() {}
 
     // Extended: GTCEu
