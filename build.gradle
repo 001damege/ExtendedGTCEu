@@ -171,6 +171,8 @@ dependencies {
 
     modRuntimeOnly("curse.maven:flux-networks-248020:5234697")
     modImplementation("curse.maven:long-power-compat-1338476:6955352")
+
+    modImplementation("curse.maven:re-avaritia-623969:7362367")
 }
 
 tasks.named('processResources', ProcessResources).configure {

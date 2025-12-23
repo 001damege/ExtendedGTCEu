@@ -237,6 +237,6 @@ public class EGTMultiMachines {
                     .where('-', any())
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
-                    null)
+                    GTCEu.id("block/multiblock/cracking_unit"))
             .register();
 }

@@ -14,8 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public enum EGTCoilType implements StringRepresentable, ICoilType {
 
-    NEUTRONIUM("neutronium", 13000, 32, 16, GTMaterials.Neutronium,
-            EGT.id("block/casing/coils/machine_coil_neutronium"));
+    NEUTRONIUM("neutronium", 13000, 32, 16, GTMaterials.Neutronium, null);
 
     @NotNull
     @Getter

@@ -4,7 +4,9 @@ import com.egt.EGT;
 import com.egt.data.recipes.AssemblerRecipes;
 import com.egt.data.recipes.AssemblyLineRecipes;
 import com.egt.data.recipes.NeutronSynthesisRecipes;
+import com.egt.data.recipes.ParallelHatchRecipes;
 import com.egt.data.recipes.addon.ae2.PolarizerRecipes;
+import com.egt.data.recipes.addon.avaritia.AvaritiaRecipes;
 import com.egt.data.recipes.addon.draconicevolution.DraconicReactorRecipes;
 import com.egt.data.recipes.addon.draconicevolution.FusionCraftingRecipes;
 import com.egt.data.recipes.addon.enderio.AlloySmelterRecipes;
@@ -30,6 +32,7 @@ public class EGTRecipes {
         AssemblerRecipes.init(consumer);
         AssemblyLineRecipes.init(consumer);
         NeutronSynthesisRecipes.init(consumer);
+        ParallelHatchRecipes.init(consumer);
 
         if (EGT.Mods.isMekLoaded()) {
             ExtractorRecipes.init(consumer);
@@ -38,6 +41,11 @@ public class EGTRecipes {
             OxidizingRecipes.init(consumer);
             FissileFuelRecipes.init(consumer);
             MiscRecipes.init(consumer);
+            DissolutionRecipes.init(consumer);
+            WasherRecipes.init(consumer);
+            CrystallizerRecipes.init(consumer);
+            EnrichmentRecipes.init(consumer);
+            ThermalEvaporationRecipes.init(consumer);
         }
 
         if (EGT.Mods.isMekGeneratorsLoaded()) {
@@ -45,6 +53,7 @@ public class EGTRecipes {
             GasBurningRecipes.init(consumer);
             SteamTurbineRecipes.init(consumer);
             FissionReactorRecipes.init(consumer);
+            MekGenChemicalInfuserRecipes.init(consumer);
         }
 
         if (EGT.Mods.isDELoaded()) {
@@ -58,6 +67,10 @@ public class EGTRecipes {
 
         if (GTCEu.Mods.isAE2Loaded()) {
             PolarizerRecipes.init(consumer);
+        }
+
+        if (EGT.Mods.isAvaritiaLoaded()) {
+            AvaritiaRecipes.init(consumer);
         }
     }
 }

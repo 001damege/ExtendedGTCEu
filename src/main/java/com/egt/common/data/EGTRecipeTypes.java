@@ -41,6 +41,12 @@ public class EGTRecipeTypes {
             .setSound(GTSoundEntries.ARC)
             .setSmallRecipeMap(NEUTRON_SYNTHESIS_RECIPES);
 
+    public static final GTRecipeType PARTICLE_ACCELERATOR = register("particle_accelerator", MULTIBLOCK)
+            .setMaxIOSize(16, 4, 16, 4)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.COMPUTATION);
+
     // Draconic Evolution
 
     public static final GTRecipeType DRACONIC_REACTOR_RECIPES = register("draconic_reactor", MULTIBLOCK)
@@ -58,7 +64,7 @@ public class EGTRecipeTypes {
     // Mekanism
 
     public static final GTRecipeType ENRICHING_RECIPES = register("enriching", MULTIBLOCK)
-            .setMaxIOSize(2, 2, 0, 0)
+            .setMaxIOSize(1, 1, 0, 0)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ARC);
@@ -181,6 +187,14 @@ public class EGTRecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.FURNACE)
             .setSmallRecipeMap(GTRecipeTypes.ALLOY_SMELTER_RECIPES);
+
+    // Avaritia
+
+    public static final GTRecipeType NEUTRONIUM_COLLECTOR_RECIPES = register("neutronium_collector", MULTIBLOCK)
+            .setMaxIOSize(0, 1, 0, 0)
+            .setEUIO(IO.NONE)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.COMPUTATION);
 
     @SuppressWarnings("deprecation")
     @NotNull
