@@ -45,12 +45,12 @@ public class EGTMachines {
     public static final MachineDefinition[] PARALLEL_HATCH = registerTieredMachines("parallel_hatch",
             ParallelHatchPartMachine::new, (tier, builder) -> builder
                     .langValue(switch (tier) {
-                        case 9 -> "Epic";
-                        case 10 -> "Epic II";
-                        case 11 -> "Epic III";
-                        case 12 -> "Epic IV";
-                        case 13 -> "Legendary";
-                        case 14 -> "MAX";
+                        case 9 -> "VoidGate";
+                        case 10 -> "VoidForge";
+                        case 11 -> "WarpNexus";
+                        case 12 -> "EntroFlux";
+                        case 13 -> "Omniverse";
+                        case 14 -> "Singulith";
                         default -> "Simple";
                     } + " Parallel Control Hatch")
                     .rotationState(RotationState.ALL)
