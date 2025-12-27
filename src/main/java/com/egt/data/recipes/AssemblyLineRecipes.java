@@ -1,11 +1,13 @@
 package com.egt.data.recipes;
 
 import com.egt.common.data.EGTMultiMachines;
+
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.machines.GCYMMachines;
 import com.gregtechceu.gtceu.common.data.machines.GTMultiMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -41,30 +43,7 @@ public class AssemblyLineRecipes {
                 .EUt(VA[UEV])
                 .save(provider);
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_fusion_reactor"))
-                .inputItems(GTMultiMachines.FUSION_REACTOR[UV], 8)
-                .inputItems(CustomTags.UHV_CIRCUITS, 4)
-                .inputItems(GTItems.GRAVI_STAR, 32)
-                .inputItems(GTItems.NAN_CERTIFICATE)
-                .inputItems(GTItems.FIELD_GENERATOR_UV)
-                .inputItems(HIGHLY_ADVANCED_SOC, 64)
-                .inputItems(HIGHLY_ADVANCED_SOC, 64)
-                .inputItems(HIGHLY_ADVANCED_SOC, 64)
-                .inputItems(HIGHLY_ADVANCED_SOC, 64)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 64)
-                .inputItems(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 32)
-                .inputFluids(Neutronium.getFluid(L * 16))
-                .inputFluids(SolderingAlloy.getFluid(L * 32))
-                .outputItems(EGTMultiMachines.FUSION_REACTOR[UHV])
-                .stationResearch(b -> b
-                        .researchStack(GTMultiMachines.FUSION_REACTOR[UV].asStack())
-                        .CWUt(288)
-                        .EUt(VA[UHV]))
-                .duration(2000)
-                .EUt(VA[UV])
-                .save(provider);
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_alloy_blast_smelter"))
+        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("mega_alloy_blast_smelter"))
                 .inputItems(CustomTags.UV_CIRCUITS, 32)
                 .inputItems(GTItems.FIELD_GENERATOR_UV, 8)
                 .inputItems(GTBlocks.COIL_TRITANIUM, 8)
@@ -73,7 +52,7 @@ public class AssemblyLineRecipes {
                 .inputFluids(SolderingAlloy.getFluid(1152))
                 .inputFluids(Tritanium.getFluid(1152))
                 .inputFluids(Naquadria.getFluid(5000))
-                .outputItems(EGTMultiMachines.EXTRA_ALLOY_BLAST_SMELTER)
+                .outputItems(EGTMultiMachines.MEGA_ALLOY_BLAST_SMELTER)
                 .stationResearch(b -> b
                         .researchStack(GCYMMachines.BLAST_ALLOY_SMELTER.asStack())
                         .CWUt(144)
@@ -82,7 +61,7 @@ public class AssemblyLineRecipes {
                 .EUt(VA[UHV] / 2)
                 .save(provider);
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("extra_cracker"))
+        ASSEMBLY_LINE_RECIPES.recipeBuilder(id("mega_cracker"))
                 .inputItems(CustomTags.LuV_CIRCUITS, 8)
                 .inputItems(GTBlocks.COIL_HSSG, 32)
                 .inputItems(GTItems.ELECTRIC_PUMP_LuV, 8)
@@ -90,7 +69,7 @@ public class AssemblyLineRecipes {
                 .inputItems(wireGtDouble, IndiumTinBariumTitaniumCuprate, 16)
                 .inputFluids(SolderingAlloy.getFluid(1152))
                 .inputFluids(Naphtha.getFluid(1152))
-                .outputItems(EGTMultiMachines.EXTRA_CRACKER)
+                .outputItems(EGTMultiMachines.MEGA_CRACKER)
                 .stationResearch(b -> b
                         .researchStack(GTMultiMachines.CRACKER.asStack())
                         .CWUt(20)
@@ -107,7 +86,7 @@ public class AssemblyLineRecipes {
                 .inputItems(round, Neodragonium, 8)
                 .inputItems(wireFine, Tritanium, 64)
                 .inputItems(wireFine, Tritanium, 64)
-                .inputItems(cableGtSingle, Europium, 2)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 4))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
@@ -128,7 +107,7 @@ public class AssemblyLineRecipes {
                 .inputItems(screw, Neodragonium, 8)
                 .inputItems(ring, StyreneButadieneRubber, 16)
                 .inputItems(rotor, Neodragonium)
-                .inputItems(cableGtSingle, Europium)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide)
                 .inputFluids(SolderingAlloy.getFluid(L * 4))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
@@ -148,7 +127,7 @@ public class AssemblyLineRecipes {
                 .inputItems(ring, Neodragonium, 4)
                 .inputItems(round, Neodragonium, 16)
                 .inputItems(screw, Neodragonium, 4)
-                .inputItems(cableGtSingle, Europium, 2)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 4))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(StyreneButadieneRubber.getFluid(L * 32))
@@ -171,7 +150,7 @@ public class AssemblyLineRecipes {
                 .inputItems(rod, Neodragonium, 4)
                 .inputItems(gear, Tritanium)
                 .inputItems(gearSmall, Tritanium, 2)
-                .inputItems(cableGtSingle, Europium, 2)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 4))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
@@ -194,7 +173,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UHV_CIRCUITS)
                 .inputItems(CustomTags.UV_CIRCUITS, 2)
                 .inputItems(CustomTags.ZPM_CIRCUITS, 4)
-                .inputItems(cableGtSingle, Europium, 4)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
@@ -216,7 +195,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UHV_CIRCUITS, 2)
                 .inputItems(wireFine, Neodragonium, 64)
                 .inputItems(wireFine, Neodragonium, 64)
-                .inputItems(cableGtSingle, Europium, 4)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Neutronium.getFluid(L * 2))
                 .outputItems(GTItems.FIELD_GENERATOR_UHV)
@@ -237,7 +216,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UHV_CIRCUITS)
                 .inputItems(foil, Tritanium, 64)
                 .inputItems(foil, Tritanium, 32)
-                .inputItems(cableGtSingle, Europium, 4)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
                 .outputItems(GTItems.EMITTER_UHV)
@@ -258,7 +237,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UHV_CIRCUITS, 2)
                 .inputItems(foil, Tritanium, 64)
                 .inputItems(foil, Tritanium, 32)
-                .inputItems(cableGtSingle, Europium, 4)
+                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Neutronium.getFluid(L * 2))
                 .outputItems(GTItems.SENSOR_UHV)
@@ -279,7 +258,7 @@ public class AssemblyLineRecipes {
                 .inputItems(round, Explosium, 8)
                 .inputItems(wireFine, Neodragonium, 64)
                 .inputItems(wireFine, Neodragonium, 64)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 2)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neodragonium.getFluid(L * 2))
@@ -300,7 +279,7 @@ public class AssemblyLineRecipes {
                 .inputItems(screw, Explosium, 8)
                 .inputItems(ring, StyreneButadieneRubber, 16)
                 .inputItems(rotor, Explosium)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neodragonium.getFluid(L * 2))
@@ -320,7 +299,7 @@ public class AssemblyLineRecipes {
                 .inputItems(ring, Explosium, 4)
                 .inputItems(round, Explosium, 16)
                 .inputItems(screw, Explosium, 4)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 2)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(StyreneButadieneRubber.getFluid(L * 32))
@@ -343,7 +322,7 @@ public class AssemblyLineRecipes {
                 .inputItems(rod, Explosium, 4)
                 .inputItems(gear, Neodragonium)
                 .inputItems(gearSmall, Neodragonium, 2)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 2)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 2)
                 .inputFluids(SolderingAlloy.getFluid(L * 8))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neodragonium.getFluid(L * 2))
@@ -366,7 +345,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UEV_CIRCUITS)
                 .inputItems(CustomTags.UHV_CIRCUITS, 2)
                 .inputItems(CustomTags.UV_CIRCUITS, 4)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 4)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Lubricant.getFluid(L * 8))
                 .inputFluids(Neodragonium.getFluid(L * 2))
@@ -388,7 +367,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UEV_CIRCUITS, 2)
                 .inputItems(wireFine, Explosium, 64)
                 .inputItems(wireFine, Explosium, 64)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 4)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Neodragonium.getFluid(L * 2))
                 .outputItems(GTItems.FIELD_GENERATOR_UEV)
@@ -409,7 +388,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UEV_CIRCUITS)
                 .inputItems(foil, Neodragonium, 64)
                 .inputItems(foil, Neodragonium, 32)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 4)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Neodragonium.getFluid(L * 2))
                 .outputItems(GTItems.EMITTER_UEV)
@@ -430,7 +409,7 @@ public class AssemblyLineRecipes {
                 .inputItems(CustomTags.UEV_CIRCUITS, 2)
                 .inputItems(foil, Neodragonium, 64)
                 .inputItems(foil, Neodragonium, 32)
-                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutronate, 4)
+                .inputItems(wireGtSingle, RutheniumTriniumAmericiumNeutroniumEnrichedNaquadahEuropiumDuranium, 4)
                 .inputFluids(SolderingAlloy.getFluid(L * 16))
                 .inputFluids(Neodragonium.getFluid(L * 2))
                 .outputItems(GTItems.SENSOR_UEV)

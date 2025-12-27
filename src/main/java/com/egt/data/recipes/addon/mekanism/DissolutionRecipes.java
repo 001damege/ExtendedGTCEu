@@ -15,7 +15,6 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 public class DissolutionRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-
         // Copper
 
         DISSOLUTION_RECIPES.recipeBuilder(id("copper/slurry/dirty/from_raw_ore"))

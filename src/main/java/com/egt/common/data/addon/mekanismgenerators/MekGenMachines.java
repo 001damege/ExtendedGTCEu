@@ -2,12 +2,13 @@ package com.egt.common.data.addon.mekanismgenerators;
 
 import com.egt.common.data.EGTCreativeTab;
 import com.egt.common.data.EGTRecipeTypes;
-
 import com.egt.common.data.addon.mekanismgenerators.part.FusionFuelHatch;
+
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
+
 import net.minecraft.network.chat.Component;
 
 import static com.egt.EGT.REGISTRATE;

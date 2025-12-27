@@ -69,7 +69,7 @@ public class EGTItems {
     // T10: Warp Nexus
 
     public static ItemEntry<Item> WARP_NEXUS_MAINFRAME_UXV = REGISTRATE
-            .item("warp_nexus_mainframe", Item::new)
+            .item("warp_nexus_processor_mainframe", Item::new)
             .lang("WrapNexus Mainframe")
             .tag(CustomTags.UXV_CIRCUITS)
             .register();
@@ -95,7 +95,7 @@ public class EGTItems {
     // T11: Entroflux
 
     public static ItemEntry<Item> ENTROFLUX_MAINFRAME_OpV = REGISTRATE
-            .item("entroflux_mainframe", Item::new)
+            .item("entroflux_processor_mainframe", Item::new)
             .lang("EntroFlux Mainframe")
             .tag(CustomTags.OpV_CIRCUITS)
             .register();
@@ -121,7 +121,7 @@ public class EGTItems {
     // T12: Omniverse
 
     public static ItemEntry<Item> OMNIVERSE_MAINFRAME_MAX = REGISTRATE
-            .item("omniverse_mainframe", Item::new)
+            .item("omniverse_processor_mainframe", Item::new)
             .lang("Omniverse Mainframe")
             .tag(CustomTags.MAX_CIRCUITS)
             .register();

@@ -2,8 +2,9 @@ package com.egt.data.recipes.addon.mekanismgenerators;
 
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 
-import mekanism.common.registries.MekanismFluids;
 import net.minecraft.data.recipes.FinishedRecipe;
+
+import mekanism.common.registries.MekanismFluids;
 
 import java.util.function.Consumer;
 

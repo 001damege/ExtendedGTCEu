@@ -4,21 +4,23 @@ import com.egt.api.EGTValues;
 import com.egt.common.data.*;
 import com.egt.common.data.addon.mekanism.MekMaterials;
 import com.egt.common.data.addon.mekanismgenerators.MekGenMaterials;
-import com.egt.data.EGTDataGens;
+import com.egt.data.EGTDataGen;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -49,7 +51,7 @@ public class EGT {
         EGTCreativeTab.init();
         EGTItems.init();
         EGTBlocks.init();
-        EGTDataGens.init();
+        EGTDataGen.init();
     }
 
     public static ResourceLocation id(String path) {

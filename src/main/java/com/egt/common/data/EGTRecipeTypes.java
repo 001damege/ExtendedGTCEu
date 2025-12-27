@@ -11,6 +11,7 @@ import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
 
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -41,11 +42,38 @@ public class EGTRecipeTypes {
             .setSound(GTSoundEntries.ARC)
             .setSmallRecipeMap(NEUTRON_SYNTHESIS_RECIPES);
 
-    public static final GTRecipeType PARTICLE_ACCELERATOR = register("particle_accelerator", MULTIBLOCK)
+    public static final GTRecipeType PARTICLE_ACCELERATOR_RECIPES = register("particle_accelerator", MULTIBLOCK)
             .setMaxIOSize(16, 4, 16, 4)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.COMPUTATION);
+
+    public static final GTRecipeType MATTER_FABRICATOR_RECIPES = register("matter_fabricator", ELECTRIC)
+            .setMaxIOSize(1, 0, 0, 1)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.COMPUTATION);
+
+    public static final GTRecipeType HYPER_INSTABILITY_COLLIDER_RECIPES = register("hyper_instability_collider", MULTIBLOCK)
+            .setMaxIOSize(8, 4, 8, 4)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ARC);
+
+    public static final GTRecipeType MEGA_FUSION_REACTOR_RECIPES = register("mega_fusion_reactor", MULTIBLOCK)
+            .setMaxIOSize(0, 0, 4, 1)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setUiBuilder(FusionReactorMachine::addEUToStartLabel)
+            .setMaxTooltips(4)
+            .setOffsetVoltageText(true)
+            .setSound(GTSoundEntries.ARC);
+
+    public static final GTRecipeType HYPER_FUSION_SYNTHESIS_RECIPES = register("hyperfusuon_synthesis", MULTIBLOCK)
+            .setMaxIOSize(20, 4, 8, 4)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ARC);
 
     // Draconic Evolution
 

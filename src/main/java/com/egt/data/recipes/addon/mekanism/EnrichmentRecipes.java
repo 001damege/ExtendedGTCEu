@@ -1,9 +1,10 @@
 package com.egt.data.recipes.addon.mekanism;
 
-import mekanism.common.registries.MekanismItems;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
+
+import mekanism.common.registries.MekanismItems;
 
 import java.util.function.Consumer;
 

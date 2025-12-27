@@ -1,19 +1,21 @@
 package com.egt.common.data.addon.mekanismgenerators.part;
 
 import com.egt.common.data.addon.mekanismgenerators.MekGenMaterials;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableFluidTank;
 import com.gregtechceu.gtceu.api.transfer.fluid.CustomFluidTank;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.FluidHatchPartMachine;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Collections;
 
-
 public class FusionFuelHatch extends FluidHatchPartMachine {
+
     protected InfiniteFusionFuelTank fuelTank;
     public static final int FLUID_AMOUNT = 2_000_000_000;
 
@@ -51,6 +53,7 @@ public class FusionFuelHatch extends FluidHatchPartMachine {
     }
 
     protected static class InfiniteFusionFuelTank extends CustomFluidTank {
+
         private static final CompoundTag EMPTY = new CompoundTag();
         private static final FluidStack STACK = new FluidStack(MekGenMaterials.DTFuel.getFluid(), Integer.MAX_VALUE);
 

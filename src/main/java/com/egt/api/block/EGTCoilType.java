@@ -1,7 +1,6 @@
 package com.egt.api.block;
 
-import com.egt.EGT;
-
+import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.ICoilType;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
@@ -14,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public enum EGTCoilType implements StringRepresentable, ICoilType {
 
-    NEUTRONIUM("neutronium", 13000, 32, 16, GTMaterials.Neutronium, null);
+    NEUTRONIUM("neutronium", 13000, 32, 16, GTMaterials.Neutronium, GTCEu.id("block/casings/fusion/superconducting_coil"));
 
     @NotNull
     @Getter

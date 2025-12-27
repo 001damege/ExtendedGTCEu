@@ -1,12 +1,12 @@
-package com.egt.data.recipes.addon.mekanism;
+package com.egt.data.recipes.addon.enderio;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-public class NucleosynthesizingRecipes {
+public class EIORecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-
+        AlloySmelterRecipes.init(provider);
     }
 }

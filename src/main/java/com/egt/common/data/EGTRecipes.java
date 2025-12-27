@@ -1,21 +1,15 @@
 package com.egt.common.data;
 
 import com.egt.EGT;
-import com.egt.data.recipes.AssemblerRecipes;
-import com.egt.data.recipes.AssemblyLineRecipes;
-import com.egt.data.recipes.NeutronSynthesisRecipes;
-import com.egt.data.recipes.ParallelHatchRecipes;
-import com.egt.data.recipes.addon.ae2.PolarizerRecipes;
+import com.egt.data.recipes.*;
+import com.egt.data.recipes.addon.ae2.AE2Recipes;
 import com.egt.data.recipes.addon.avaritia.AvaritiaRecipes;
-import com.egt.data.recipes.addon.draconicevolution.DraconicReactorRecipes;
-import com.egt.data.recipes.addon.draconicevolution.FusionCraftingRecipes;
-import com.egt.data.recipes.addon.enderio.AlloySmelterRecipes;
-import com.egt.data.recipes.addon.mekanism.*;
+import com.egt.data.recipes.addon.draconicevolution.DERecipes;
+import com.egt.data.recipes.addon.enderio.EIORecipes;
+import com.egt.data.recipes.addon.mekanism.MekanismRecipes;
 import com.egt.data.recipes.addon.mekanismgenerators.*;
-
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.common.data.GTRecipes;
-
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -33,40 +27,32 @@ public class EGTRecipes {
         AssemblyLineRecipes.init(consumer);
         NeutronSynthesisRecipes.init(consumer);
         ParallelHatchRecipes.init(consumer);
+        MatterFabricatorRecipes.init(consumer);
+        HyperInstabilityColliderRecipes.init(consumer);
+        MEGAFusionReactorRecipes.init(consumer);
+        MixerRecipes.init(consumer);
+        PlasmaRecipes.init(consumer);
+        MachineTiersRecipes.init(consumer);
+        VanillaRecipes.init(consumer);
 
         if (EGT.Mods.isMekLoaded()) {
-            ExtractorRecipes.init(consumer);
-            ReactionRecipes.init(consumer);
-            NucleosynthesizingRecipes.init(consumer);
-            OxidizingRecipes.init(consumer);
-            FissileFuelRecipes.init(consumer);
-            MiscRecipes.init(consumer);
-            DissolutionRecipes.init(consumer);
-            WasherRecipes.init(consumer);
-            CrystallizerRecipes.init(consumer);
-            EnrichmentRecipes.init(consumer);
-            ThermalEvaporationRecipes.init(consumer);
+            MekanismRecipes.init(consumer);
         }
 
         if (EGT.Mods.isMekGeneratorsLoaded()) {
-            FusionReactorRecipes.init(consumer);
-            GasBurningRecipes.init(consumer);
-            SteamTurbineRecipes.init(consumer);
-            FissionReactorRecipes.init(consumer);
-            MekGenChemicalInfuserRecipes.init(consumer);
+            MekanismGeneratorsRecipes.init(consumer);
         }
 
         if (EGT.Mods.isDELoaded()) {
-            FusionCraftingRecipes.init(consumer);
-            DraconicReactorRecipes.init(consumer);
+            DERecipes.init(consumer);
         }
 
         if (EGT.Mods.isEnderIOLoaded()) {
-            AlloySmelterRecipes.init(consumer);
+            EIORecipes.init(consumer);
         }
 
         if (GTCEu.Mods.isAE2Loaded()) {
-            PolarizerRecipes.init(consumer);
+            AE2Recipes.init(consumer);
         }
 
         if (EGT.Mods.isAvaritiaLoaded()) {

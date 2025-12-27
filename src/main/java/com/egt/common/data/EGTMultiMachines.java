@@ -1,36 +1,21 @@
 package com.egt.common.data;
 
 import com.egt.EGT;
-import com.egt.api.EGTValues;
 import com.egt.common.data.addon.ae2.AEMultiMachines;
 import com.egt.common.data.addon.draconicevolution.DEMultiMachines;
 import com.egt.common.data.addon.mekanism.MekMultiMachines;
 import com.egt.common.data.addon.mekanismgenerators.MekGenMultiMachines;
-
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine;
-import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
-import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
-import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderHelper;
 import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.AssemblyLineMachine;
-import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
-
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.level.block.Block;
-
-import java.util.Locale;
 
 import static com.egt.EGT.REGISTRATE;
-import static com.egt.common.data.EGTMachineUtils.registerTieredMultis;
-import static com.gregtechceu.gtceu.api.GTValues.UHV;
 import static com.gregtechceu.gtceu.api.machine.multiblock.PartAbility.*;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
-import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel;
 
 public class EGTMultiMachines {
 
@@ -56,10 +41,9 @@ public class EGTMultiMachines {
         }
     }
 
-    public static final MultiblockMachineDefinition ASSEMBLY_LINE = REGISTRATE
-            .multiblock("extra_assembly_line", AssemblyLineMachine::new)
+    public static final MultiblockMachineDefinition MEGA_ASSEMBLY_LINE = REGISTRATE
+            .multiblock("mega_assembly_line", AssemblyLineMachine::new)
             .rotationState(RotationState.ALL)
-            .langValue("Extra Assembly Line")
             .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT, GTRecipeModifiers.PARALLEL_HATCH)
             .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
@@ -102,65 +86,9 @@ public class EGTMultiMachines {
                     GTCEu.id("gtceu:block/multiblock/assembly_line"))
             .register();
 
-    public static final MultiblockMachineDefinition[] FUSION_REACTOR = registerTieredMultis("extra_fusion_reactor",
-            FusionReactorMachine::new, (tier, builder) -> builder
-                    .rotationState(RotationState.ALL)
-                    .langValue("Extra Fusion Reactor")
-                    .recipeType(GTRecipeTypes.FUSION_RECIPES)
-                    .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, FusionReactorMachine::recipeModifier,
-                            GTRecipeModifiers.BATCH_MODE)
-                    .tooltips(
-                            Component.translatable("gtceu.machine.fusion_reactor.capacity",
-                                    FusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
-                            Component.translatable("gtceu.machine.fusion_reactor.overclocking"),
-                            Component.translatable("gtceu.multiblock.%s_fusion_reactor.description"
-                                    .formatted(GTValues.VN[tier].toLowerCase(Locale.ROOT))))
-                    .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
-                    .pattern(def -> FactoryBlockPattern.start()
-                            .aisle("###############", "######OGO######", "###############")
-                            .aisle("######ICI######", "####GGAAAGG####", "######ICI######")
-                            .aisle("####CC###CC####", "###EAAOGOAAE###", "####CC###CC####")
-                            .aisle("###C#######C###", "##EKEG###GEKE##", "###C#######C###")
-                            .aisle("##C#########C##", "#GAE#######EAG#", "##C#########C##")
-                            .aisle("##C#########C##", "#GAG#######GAG#", "##C#########C##")
-                            .aisle("#I###########I#", "OAO#########OAO", "#I###########I#")
-                            .aisle("#C###########C#", "GAG#########GAG", "#C###########C#")
-                            .aisle("#I###########I#", "OAO#########OAO", "#I###########I#")
-                            .aisle("##C#########C##", "#GAG#######GAG#", "##C#########C##")
-                            .aisle("##C#########C##", "#GAE#######EAG#", "##C#########C##")
-                            .aisle("###C#######C###", "##EKEG###GEKE##", "###C#######C###")
-                            .aisle("####CC###CC####", "###EAAOGOAAE###", "####CC###CC####")
-                            .aisle("######ICI######", "####GGAAAGG####", "######IPI######")
-                            .aisle("###############", "######OSO######", "###############")
-                            .where('S', controller(blocks(def.get())))
-                            .where('G', blocks(GTBlocks.FUSION_GLASS.get())
-                                    .or(blocks(GCYMBlocks.CASING_ATOMIC.get())))
-                            .where('E', blocks(GCYMBlocks.CASING_ATOMIC.get())
-                                    .or(blocks(INPUT_ENERGY.getBlocks(EGTValues.HIGH_TIERS).toArray(Block[]::new))
-                                            .setMinGlobalLimited(1).setPreviewCount(16)))
-                            .where('C', blocks(GCYMBlocks.CASING_ATOMIC.get()))
-                            .where('K', blocks(FusionReactorMachine.getCoilState(tier)))
-                            .where('O', blocks(GCYMBlocks.CASING_ATOMIC.get())
-                                    .or(abilities(EXPORT_FLUIDS)))
-                            .where('A', air())
-                            .where('I', blocks(GCYMBlocks.CASING_ATOMIC.get())
-                                    .or(abilities(IMPORT_FLUIDS).setMinGlobalLimited(2)))
-                            .where('P', blocks(GCYMBlocks.CASING_ATOMIC.get())
-                                    .or(abilities(PARALLEL_HATCH)))
-                            .where('#', any())
-                            .build())
-                    .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
-                    .model(createWorkableCasingMachineModel(GTCEu.id("gtceu:block/casings/gcym/atomic_casing"),
-                            GTCEu.id("block/multiblock/fusion_reactor"))
-                            .andThen(b -> b.addDynamicRenderer(DynamicRenderHelper::createFusionRingRender)))
-                    .hasBER(true)
-                    .register(),
-            UHV);
-
-    public static final MultiblockMachineDefinition EXTRA_ALLOY_BLAST_SMELTER = REGISTRATE
-            .multiblock("extra_alloy_blast_smelter", CoilWorkableElectricMultiblockMachine::new)
+    public static final MultiblockMachineDefinition MEGA_ALLOY_BLAST_SMELTER = REGISTRATE
+            .multiblock("mega_alloy_blast_smelter", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
-            .langValue("Extra Alloy Blast Smelter")
             .recipeType(GCYMRecipeTypes.ALLOY_BLAST_RECIPES)
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.BATCH_MODE,
                     GTRecipeModifiers::ebfOverclock)
@@ -211,10 +139,9 @@ public class EGTMultiMachines {
                     GTCEu.id("block/multiblock/gcym/blast_alloy_smelter"))
             .register();
 
-    public static final MultiblockMachineDefinition EXTRA_CRACKER = REGISTRATE
-            .multiblock("extra_cracker", CoilWorkableElectricMultiblockMachine::new)
+    public static final MultiblockMachineDefinition MEGA_CRACKER = REGISTRATE
+            .multiblock("mega_cracker", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.ALL)
-            .langValue("Extra Cracker")
             .recipeType(GTRecipeTypes.CRACKING_RECIPES)
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.BATCH_MODE)
             .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)

@@ -4,7 +4,6 @@ import com.egt.EGT;
 import com.egt.common.data.addon.ae2.AEMultiMachines;
 import com.egt.common.data.addon.enderio.EIOMachines;
 import com.egt.common.data.addon.mekanismgenerators.MekGenMachines;
-
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -14,13 +13,10 @@ import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.ParallelHatchPartMachine;
-
 import net.minecraft.network.chat.Component;
 
 import static com.egt.EGT.REGISTRATE;
-import static com.egt.common.data.EGTMachineUtils.registerSimpleMachines;
-import static com.egt.common.data.EGTMachineUtils.registerTieredMachines;
-import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.hvCappedTankSizeFunction;
+import static com.egt.common.data.EGTMachineUtils.*;
 
 public class EGTMachines {
 
@@ -44,15 +40,6 @@ public class EGTMachines {
 
     public static final MachineDefinition[] PARALLEL_HATCH = registerTieredMachines("parallel_hatch",
             ParallelHatchPartMachine::new, (tier, builder) -> builder
-                    .langValue(switch (tier) {
-                        case 9 -> "VoidGate";
-                        case 10 -> "VoidForge";
-                        case 11 -> "WarpNexus";
-                        case 12 -> "EntroFlux";
-                        case 13 -> "Omniverse";
-                        case 14 -> "Singulith";
-                        default -> "Simple";
-                    } + " Parallel Control Hatch")
                     .rotationState(RotationState.ALL)
                     .abilities(PartAbility.PARALLEL_HATCH)
                     .modelProperty(GTMachineModelProperties.IS_FORMED, false)
@@ -67,6 +54,6 @@ public class EGTMachines {
                     .register(),
             GTValues.UHV, GTValues.UEV, GTValues.UIV, GTValues.UXV, GTValues.OpV, GTValues.MAX);
 
-    public static final MachineDefinition[] NEUTRON_SYNTHESIS = registerSimpleMachines("neutron_synthesis",
-            EGTRecipeTypes.NEUTRON_SYNTHESIS_RECIPES, hvCappedTankSizeFunction);
+    public static final MachineDefinition[] MATTER_FABRICATOR = registerSimpleMachines("matter_fabricator",
+            EGTRecipeTypes.MATTER_FABRICATOR_RECIPES, UH_TIERS);
 }

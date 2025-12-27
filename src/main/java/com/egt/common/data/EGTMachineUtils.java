@@ -2,6 +2,7 @@ package com.egt.common.data;
 
 import com.egt.EGT;
 
+import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.*;
@@ -21,10 +22,13 @@ import java.util.Locale;
 import java.util.function.BiFunction;
 
 import static com.egt.EGT.REGISTRATE;
+import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 
 public class EGTMachineUtils {
+
+    public static final int[] UH_TIERS = tiersBetween(ZPM, GTCEuAPI.isHighTier() ? MAX : UHV);
 
     public static MultiblockMachineDefinition[] registerTieredMultis(String name,
                                                                      BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
@@ -93,6 +97,10 @@ public class EGTMachineUtils {
                                                              GTRecipeType recipeType,
                                                              Int2IntFunction tankScalingFunction) {
         return registerSimpleMachines(registrate, name, recipeType, tankScalingFunction, false);
+    }
+
+    public static MachineDefinition[] registerSimpleMachines(String name, GTRecipeType recipeType, int... tiers) {
+        return registerSimpleMachines(REGISTRATE, name, recipeType, defaultTankSizeFunction, false, tiers);
     }
 
     public static MachineDefinition[] registerSimpleMachines(String name, GTRecipeType recipeType) {

@@ -1,8 +1,10 @@
 package com.egt.data.recipes.addon.mekanismgenerators;
 
+import com.egt.common.data.addon.mekanismgenerators.MekGenMachines;
 import com.egt.common.data.addon.mekanismgenerators.MekGenMultiMachines;
 
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -13,11 +15,12 @@ import mekanism.generators.common.registries.GeneratorsBlocks;
 import java.util.function.Consumer;
 
 import static com.egt.EGT.id;
-import static com.gregtechceu.gtceu.api.GTValues.LuV;
-import static com.gregtechceu.gtceu.api.GTValues.VA;
+import static com.gregtechceu.gtceu.api.GTValues.*;
+import static com.gregtechceu.gtceu.api.GTValues.ZPM;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.cableGtSingle;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.plateDouble;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
+import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLY_LINE_RECIPES;
 
 public class MiscRecipes {
@@ -42,6 +45,15 @@ public class MiscRecipes {
                         .EUt(VA[LuV]))
                 .duration(1000)
                 .EUt(VA[LuV])
+                .save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder(id("fusion_fuel_hatch"))
+                .inputItems(GTItems.COVER_INFINITE_WATER)
+                .inputItems(GTMachines.FLUID_IMPORT_HATCH[ZPM])
+                .inputItems(GTItems.ELECTRIC_PUMP_ZPM)
+                .outputItems(MekGenMachines.FUSION_FUEL_HATCH)
+                .duration(300)
+                .EUt(VA[ZPM])
                 .save(provider);
     }
 }

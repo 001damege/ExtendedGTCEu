@@ -1,7 +1,8 @@
 package com.egt.data.recipes.addon.avaritia;
 
-import committee.nova.mods.avaritia.init.registry.ModItems;
 import net.minecraft.data.recipes.FinishedRecipe;
+
+import committee.nova.mods.avaritia.init.registry.ModItems;
 
 import java.util.function.Consumer;
 

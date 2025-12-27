@@ -1,8 +1,10 @@
 package com.egt.data.recipes;
 
 import com.egt.common.data.EGTMachines;
+
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;

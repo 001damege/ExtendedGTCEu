@@ -14,7 +14,7 @@ public class EGTCreativeTab {
     public static RegistryEntry<CreativeModeTab> MAIN = EGT.REGISTRATE.defaultCreativeTab("main",
             builder -> builder
                     .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator("main", EGT.REGISTRATE))
-                    .icon(() -> EGTMachines.NEUTRON_SYNTHESIS[GTValues.LV].asStack())
+                    .icon(() -> EGTItems.OMNIVERSE_MAINFRAME_MAX.asStack())
                     .title(EGT.REGISTRATE.addLang("itemGroup", EGT.id("main"), "Extended: GTCEu"))
                     .build())
             .register();

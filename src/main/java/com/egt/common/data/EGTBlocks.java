@@ -1,18 +1,15 @@
 package com.egt.common.data;
 
 import com.egt.api.block.EGTCoilType;
-
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.block.ICoilType;
 import com.gregtechceu.gtceu.common.block.CoilBlock;
 import com.gregtechceu.gtceu.common.data.models.GTModels;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
-
+import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Blocks;
-
-import com.tterrag.registrate.util.entry.BlockEntry;
 
 import static com.egt.EGT.REGISTRATE;
 
